@@ -1,11 +1,16 @@
 # Project-specific settings
 EMP_DIR := third-party/Empirical/include
 
-PROJECT := std_cgp
+SGP_DIR := third-party/SignalGP/include
+PSB_DIR := third-party/psb-cpp/include
+
+# PROJECT := std_cgp
+PROJECT := prog_synth
 MAIN_CPP ?= source/${PROJECT}.cpp
 
 # Flags to use regardless of compiler
-CFLAGS_all := -Wall -Wno-unused-function -std=c++20 -lstdc++fs -I$(EMP_DIR)/ -Iinclude/ -Ithird-party/
+CFLAGS_SGP := -I$(SGP_DIR)/ -I$(PSB_DIR)
+CFLAGS_all := -Wall -Wno-unused-function -std=c++23 -lstdc++fs -I$(EMP_DIR)/ -Iinclude/ -Ithird-party/ $(CFLAGS_SGP)
 
 # Native compiler information
 CXX ?= g++14

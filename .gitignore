@@ -40,7 +40,11 @@
 # debug information files
 *.dwo
 
-std_cgp
-*.cfg
+*.dSYM
 
+std_cgp
+prog_synth
+*.cfg
+*.json
+output/
 .vscode/
