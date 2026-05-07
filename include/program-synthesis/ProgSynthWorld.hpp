@@ -238,6 +238,7 @@ protected:
   void SetupDataCollection_Phylodiversity();
   void SetupDataCollection_Summary();
   void SetupDataCollection_Elite();
+  void SetupDataCollection_PopulationSnapshot();
 
   void InitializePopulation();
   void InitializePopulation_LoadSingle();
@@ -251,6 +252,7 @@ protected:
   void SnapshotSolution();
   void SnapshotPhylogeny();
   void SnapshotPhyloGenotypes();
+  void SnapshotPopulation(); // Single update snapshot (can be reloaded)
 
 public:
 
@@ -425,7 +427,8 @@ void ProgSynthWorld::DoUpdate() {
   const bool final_update = is_final_update();
   const bool print_interval = (config.PRINT_INTERVAL() == 1) || (!(cur_update % config.PRINT_INTERVAL()) || final_update);
   const bool summary_data_interval = !(cur_update % config.OUTPUT_SUMMARY_DATA_INTERVAL()) || final_update;
-  const bool snapshot_interval = !(cur_update % config.SNAPSHOT_INTERVAL()) || final_update;
+  const bool phylo_snapshot_interval = config.PHYLO_SNAPSHOTS() && (!(cur_update % config.PHYLO_SNAPSHOT_INTERVAL()) || final_update);
+  const bool cur_pop_snapshot_interval = config.CURRENT_POP_GENOME_SNAPSHOTS() && (!(cur_update % config.CURRENT_POP_SNAPSHOT_INTERVAL()) || final_update);
 
   // (2) File output
   if (summary_data_interval) {
@@ -445,8 +448,12 @@ void ProgSynthWorld::DoUpdate() {
     phylodiversity_file_ptr->Update();
   }
 
-  if (snapshot_interval) {
+  if (phylo_snapshot_interval) {
     SnapshotPhylogeny();
+  }
+
+  if (cur_pop_snapshot_interval) {
+    SnapshotPopulation();
   }
 
   if (found_solution) {
@@ -1974,6 +1981,25 @@ void ProgSynthWorld::SnapshotConfig() {
     return ss.str();
   };
   snapshot_file.Update();
+
+}
+
+void ProgSynthWorld::SnapshotPopulation() {
+  std::ofstream outfile;
+  outfile.open(output_dir + "pop_snapshot_" + emp::to_string(GetUpdate()) + ".csv");
+
+  for (size_t org_id = 0; org_id < GetSize(); ++org_id) {
+    if (org_id) outfile << "\n";
+    auto& org = GetOrg(org_id);
+    auto& program = org.GetGenome().GetProgram();
+    PrintProgramSingleLine(
+      outfile,
+      program,
+      inst_lib
+    );
+  }
+
+  outfile.close();
 
 }
 

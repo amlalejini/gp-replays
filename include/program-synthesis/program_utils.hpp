@@ -16,6 +16,41 @@ namespace psynth {
 namespace internal {
 
 template<typename TAG_T>
+void PrintTagsSingleLine(
+  std::ostream& out,
+  const emp::vector<TAG_T>& tags
+) {
+  out << "[";
+  for (size_t tag_i = 0; tag_i < tags.size(); ++tag_i) {
+    if (tag_i) out << ",";
+    out << tags[tag_i];
+  }
+  out << "]";
+}
+
+template<typename INST_LIB_T, typename INST_T>
+void PrintInstructionSingleLine(
+  std::ostream& out,
+  const INST_LIB_T& ilib,
+  const INST_T& inst
+) {
+  size_t inst_id = inst.GetID();
+  const std::string& inst_name = ilib.GetName(inst_id);
+  const auto& inst_args = inst.GetArgs();
+  // Instruction name
+  out << inst_name;
+  // Arguments
+  out << "(";
+  for (size_t arg_i = 0; arg_i < inst_args.size(); ++arg_i) {
+    if (arg_i) out << ",";
+    out << inst_args[arg_i];
+  }
+  out << ")";
+  // Tags
+  PrintTagsSingleLine(out, inst.GetTags());
+}
+
+template<typename TAG_T>
 void PrintTagsJSON(
   std::ostream& out,
   const emp::vector<TAG_T>& tags
@@ -52,6 +87,31 @@ void PrintInstructionJSON(
   out << "}";
 }
 
+}
+
+// {function_id[function tags]:inst(args)[tags], ...}, {...}
+template<typename INST_LIB_T, typename TAG_T, typename INST_ARG_T>
+void PrintProgramSingleLine(
+  std::ostream& out,
+  const sgp::cpu::lfunprg::LinearFunctionsProgram<TAG_T, INST_ARG_T>& program,
+  const INST_LIB_T& ilib
+) {
+  for (size_t func_i = 0; func_i < program.GetSize(); ++func_i) {
+    auto& function = program[func_i];
+    if (func_i) out << ",";
+    // Begin function
+    out << "{" << func_i;
+    // Function tags
+    internal::PrintTagsSingleLine(out, function.GetTags());
+    // Function instruction sequence
+    out << ":";
+    for (size_t inst_i = 0; inst_i < function.GetSize(); ++inst_i) {
+      if (inst_i) out << ",";
+      internal::PrintInstructionSingleLine(out, ilib, function[inst_i]);
+    }
+    // End function
+    out << "}";
+  }
 }
 
 template<typename INST_LIB_T, typename TAG_T, typename INST_ARG_T>
