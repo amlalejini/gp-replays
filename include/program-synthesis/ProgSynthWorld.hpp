@@ -243,6 +243,7 @@ protected:
   void InitializePopulation();
   void InitializePopulation_LoadSingle();
   void InitializePopulation_Random();
+  void InitializePopulation_LoadFullPop();
 
   void DoEvaluation();
   void DoSelection();
@@ -1516,6 +1517,8 @@ void ProgSynthWorld::InitializePopulation() {
     InitializePopulation_Random();
   } else if (config.POP_INIT_MODE() == "load-single") {
     InitializePopulation_LoadSingle();
+  } else if (config.POP_INIT_MODE() == "load-full-pop") {
+    InitializePopulation_LoadFullPop();
   } else {
     std::cout << "Unknown POP_INIT_MODE: " << config.POP_INIT_MODE() << std::endl;
     exit(-1);
@@ -1556,6 +1559,31 @@ void ProgSynthWorld::InitializePopulation_Random() {
       }
     );
   }
+}
+
+void ProgSynthWorld::InitializePopulation_LoadFullPop() {
+  std::ifstream pop_fstream(config.LOAD_POP_FILE_PATH());
+  if (!pop_fstream.is_open()) {
+    std::cout << "Failed to open population file: " << config.LOAD_POP_FILE_PATH() << std::endl;
+    exit(-1);
+  }
+  emp::vector<program_t> loaded_programs{
+    LoadLinearFunctionsPrograms_SingleLineFormat<inst_lib_t, TAG_SIZE>(
+      pop_fstream,
+      inst_lib
+    )
+  };
+
+  exit(-1);
+  // // Load ancestor program from file (print format)
+  // program_t ancestor = LoadLinearFunctionsProgram_PrintFormat<inst_lib_t, TAG_SIZE>(
+  //   prg_fstream,
+  //   inst_lib
+  // );
+  // // Inject POP_SIZE number of copies of loaded program into population.
+  // for (size_t i = 0; i < config.POP_SIZE(); ++i) {
+  //   Inject({ancestor});
+  // }
 }
 
 void ProgSynthWorld::SetupPhylogenyTracking() {
@@ -1986,7 +2014,7 @@ void ProgSynthWorld::SnapshotConfig() {
 
 void ProgSynthWorld::SnapshotPopulation() {
   std::ofstream outfile;
-  outfile.open(output_dir + "pop_snapshot_" + emp::to_string(GetUpdate()) + ".csv");
+  outfile.open(output_dir + "pop_snapshot_" + emp::to_string(GetUpdate()) + ".dat");
 
   for (size_t org_id = 0; org_id < GetSize(); ++org_id) {
     if (org_id) outfile << "\n";

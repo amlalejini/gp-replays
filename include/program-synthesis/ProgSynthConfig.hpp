@@ -24,6 +24,7 @@ EMP_BUILD_CONFIG(ProgSynthConfig,
   GROUP(POP_INIT, "Population initialization settings"),
   VALUE(POP_INIT_MODE, std::string, "random", "How should we initialize the population? Options: random, load"),
   VALUE(ANCESTOR_FILE_PATH, std::string, "ancestor.json", "Path to ancestor file"),
+  VALUE(LOAD_POP_FILE_PATH, std::string, "population.dat", "Path to full population file"),
 
   GROUP(EVALUATION, "How are organisms evaluated?"),
   VALUE(EVAL_MODE, std::string, "full", "Evaluation mode. Options:\nfull\ncohort\ndown-sample"),
