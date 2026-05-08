@@ -351,32 +351,72 @@ emp::vector<
     }
     // New program
     emp_assert(emp::has_prefix(cur_line, "{"));
+    program_t program;
     // Each function is enclosed in {}
     // - Slice on }, to slice functions
     emp::slice(cur_line, function_strs, '}');
     for (size_t func_i = 0; func_i < function_strs.size(); ++func_i) {
-      std::cout << "func_i=" << func_i << std::endl;
+      // std::cout << "func_i=" << func_i << std::endl;
       // std::cout << function_strs[func_i] << std::endl;
       std::string& function_str = function_strs[func_i];
       // Pop function id
       std::string func_id = emp::string_pop(function_str, "[");
       emp::remove_chars(func_id, "{},");
-      // func_id = emp::string_pop(func_id, "{");
-      std::cout << "  func_id=" << func_id << std::endl;
+      // std::cout << "  func_id=" << func_id << std::endl;
       // Pop off tags list
       std::string tags_list = emp::string_pop(function_str, "]");
       emp::remove_chars(tags_list, "[]:");
-      // tags_list = emp::string_pop(tags_list, ":");
-      std::cout << "  tag list=" << tags_list << std::endl;
+      // Parse function tags
+      emp::vector<std::string> func_tags_strs;
+      emp::slice(tags_list, func_tags_strs, ',');
+      emp::vector<tag_t> func_tags;
+      for (const auto& tag_str : func_tags_strs) {
+        func_tags.emplace_back(FromString_BitSet<TAG_WIDTH>(tag_str));
+      }
+      // Add function to program with its tags
+      program.PushFunction(func_tags);
       // Pop off instruction sequence
       // Slice by instruction
       emp::vector<std::string> instruction_strs;
       emp::slice(function_str, instruction_strs, ';');
+      emp::vector<std::string> inst_components;
       // Parse instructions
-      // for ()
-
-    }
-    break;
+      for (size_t inst_i = 0; inst_i < instruction_strs.size(); ++inst_i) {
+        std::cout << "---INSTRUCTION---" << std::endl;
+        std::string& inst_str = instruction_strs[inst_i];
+        std::cout << inst_str << std::endl;
+        std::string inst_name = emp::string_pop(inst_str, "(");
+        emp::remove_chars(inst_name, ":");
+        if (inst_name == "") continue;
+        std::string inst_args_str = emp::string_pop(inst_str, ")");
+        std::string inst_tags_str = emp::string_pop(inst_str, "]");
+        emp::remove_chars(inst_tags_str, "[]");
+        // Parse arguments
+        emp::vector<int> args;
+        emp::slice(inst_args_str, inst_components, ',');
+        for (const auto& arg_str : inst_components) {
+          args.emplace_back(emp::from_string<int>(arg_str));
+        }
+        // Parse tags
+        emp::vector<tag_t> inst_tags;
+        emp::slice(inst_tags_str, inst_components, ',');
+        for (const auto& tag_str : inst_components) {
+          inst_tags.emplace_back(FromString_BitSet<TAG_WIDTH>(tag_str));
+        }
+        // Add instruction to current function
+        program.PushInst(
+          inst_lib,
+          inst_name,
+          args,
+          inst_tags
+        );
+        // std::cout << "    inst name: " << inst_name << std::endl;
+        // std::cout << "    inst args: " << inst_args_str << " " << args << std::endl;
+        // std::cout << "    inst tags: " << inst_tags_str << " " << inst_tags << std::endl;
+      } // End parsing instructions
+    } // End parsing functions
+    // Add program to list of programs
+    programs.emplace_back(program);
   }
   return programs;
 }

@@ -1573,17 +1573,11 @@ void ProgSynthWorld::InitializePopulation_LoadFullPop() {
       inst_lib
     )
   };
-
-  exit(-1);
-  // // Load ancestor program from file (print format)
-  // program_t ancestor = LoadLinearFunctionsProgram_PrintFormat<inst_lib_t, TAG_SIZE>(
-  //   prg_fstream,
-  //   inst_lib
-  // );
-  // // Inject POP_SIZE number of copies of loaded program into population.
-  // for (size_t i = 0; i < config.POP_SIZE(); ++i) {
-  //   Inject({ancestor});
-  // }
+  // Pop size should agree with loaded programs count
+  emp_assert(config.POP_SIZE() == loaded_programs.size());
+  for (size_t i = 0; i < config.POP_SIZE(); ++i) {
+    Inject({loaded_programs[i]});
+  }
 }
 
 void ProgSynthWorld::SetupPhylogenyTracking() {
