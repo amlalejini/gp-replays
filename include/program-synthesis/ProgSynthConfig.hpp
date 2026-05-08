@@ -11,6 +11,7 @@ EMP_BUILD_CONFIG(ProgSynthConfig,
   VALUE(MAX_GENS, size_t, 50000, "Maximum number of generations."),
   VALUE(MAX_EVALS, size_t, 2560000000, "Maximum number of trait evaluations."),
   VALUE(STOP_MODE, std::string, "generations", "How do we know when to stop? Options: generations\nevaluations"),
+  VALUE(PHYLO_TRACKING, bool, true, "Should we track phylogenies? If not, some selection / estimation modes will not work"),
 
   GROUP(SELECTION, "Selection settings"),
   VALUE(SELECTION, std::string, "tournament", "Selection scheme to use"),

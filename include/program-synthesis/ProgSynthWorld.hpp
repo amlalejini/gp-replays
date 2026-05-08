@@ -428,7 +428,7 @@ void ProgSynthWorld::DoUpdate() {
   const bool final_update = is_final_update();
   const bool print_interval = (config.PRINT_INTERVAL() == 1) || (!(cur_update % config.PRINT_INTERVAL()) || final_update);
   const bool summary_data_interval = !(cur_update % config.OUTPUT_SUMMARY_DATA_INTERVAL()) || final_update;
-  const bool phylo_snapshot_interval = config.PHYLO_SNAPSHOTS() && (!(cur_update % config.PHYLO_SNAPSHOT_INTERVAL()) || final_update);
+  const bool phylo_snapshot_interval = config.PHYLO_TRACKING() && config.PHYLO_SNAPSHOTS() && (!(cur_update % config.PHYLO_SNAPSHOT_INTERVAL()) || final_update);
   const bool cur_pop_snapshot_interval = config.CURRENT_POP_GENOME_SNAPSHOTS() && (!(cur_update % config.CURRENT_POP_SNAPSHOT_INTERVAL()) || final_update);
 
   // (2) File output
@@ -443,9 +443,12 @@ void ProgSynthWorld::DoUpdate() {
       pop_training_coverage.end(),
       0
     );
-    // Update summary file
+    // Update summary files
     summary_file_ptr->Update();
     elite_file_ptr->Update();
+  }
+
+  if (config.PHYLO_TRACKING() && summary_data_interval) {
     phylodiversity_file_ptr->Update();
   }
 
@@ -462,7 +465,10 @@ void ProgSynthWorld::DoUpdate() {
     SnapshotSolution();
   }
 
-  if (final_update && (cur_update % config.OUTPUT_SUMMARY_DATA_INTERVAL())) {
+  const bool update_systematics_file = config.PHYLO_TRACKING() && (
+    final_update && (cur_update % config.OUTPUT_SUMMARY_DATA_INTERVAL())
+  );
+  if (update_systematics_file) {
     GetFile(output_dir + "systematics.csv").Update();
   }
 
@@ -526,7 +532,9 @@ void ProgSynthWorld::Setup() {
   // Setup stopping condition
   SetupStoppingCondition();
   // Setup phylogeny tracking
-  SetupPhylogenyTracking();
+  if (config.PHYLO_TRACKING()) {
+    SetupPhylogenyTracking();
+  }
   // Setup data collection
   SetupDataCollection();
   // Initialize population!
@@ -786,18 +794,25 @@ void ProgSynthWorld::SetupEvaluation() {
     }
   );
 
+  // After evaluation, update taxon in systematics.
+  if (config.PHYLO_TRACKING()) {
+    end_org_evaluation_sig.AddAction(
+      [this](size_t org_id) {
+        auto& org = GetOrg(org_id);
+
+        // Record taxon information
+        taxon_t& taxon = *(systematics_ptr->GetTaxonAt(org_id));
+        taxon.GetData().RecordFitness(org.GetPhenotype().GetAggregateScore());
+        taxon.GetData().RecordPhenotype(
+          org.GetPhenotype().GetTestScores(),
+          org_training_evaluations[org_id]
+        );
+      }
+    );
+  }
+  // After evaluation, check if we found a solution.
   end_org_evaluation_sig.AddAction(
     [this](size_t org_id) {
-      auto& org = GetOrg(org_id);
-
-      // Record taxon information
-      taxon_t& taxon = *(systematics_ptr->GetTaxonAt(org_id));
-      taxon.GetData().RecordFitness(org.GetPhenotype().GetAggregateScore());
-      taxon.GetData().RecordPhenotype(
-        org.GetPhenotype().GetTestScores(),
-        org_training_evaluations[org_id]
-      );
-
       // Ccheck if candidate for testing against testing set
       // - Need to check if num_passes == number of tests evaluated on
       // - If so, add to vector of ids to be tested whether they are solutions
@@ -1126,6 +1141,7 @@ void ProgSynthWorld::SetupEvaluation_IndivRandomSample() {
 
 void ProgSynthWorld::SetupEvaluation_PhyloInformedSample() {
   std::cout << "Configuring evaluation mode: phylogeny-informed sample" << std::endl;
+  emp_assert(config.PHYLO_TRACKING());
   emp_assert(config.TEST_DOWNSAMPLE_RATE() > 0);
   emp_assert(config.TEST_DOWNSAMPLE_RATE() <= 1.0);
   emp_assert(total_training_cases > 0);
@@ -1383,6 +1399,7 @@ void ProgSynthWorld::SetupFitFunEstimator_None() {
 }
 
 void ProgSynthWorld::SetupFitFunEstimator_Ancestor() {
+  emp_assert(config.PHYLO_TRACKING());
   // estimate_test_score
   estimate_test_score = [this](size_t org_id, size_t test_id) {
     emp::Ptr<taxon_t> taxon_ptr = systematics_ptr->GetTaxonAt(org_id);
@@ -1405,6 +1422,7 @@ void ProgSynthWorld::SetupFitFunEstimator_Ancestor() {
 }
 
 void ProgSynthWorld::SetupFitFunEstimator_AncestorOpt() {
+  emp_assert(config.PHYLO_TRACKING());
   estimate_test_score = [this](size_t org_id, size_t test_id) {
     emp::Ptr<taxon_t> taxon_ptr = systematics_ptr->GetTaxonAt(org_id);
 
@@ -1431,6 +1449,7 @@ void ProgSynthWorld::SetupFitFunEstimator_AncestorOpt() {
 }
 
 void ProgSynthWorld::SetupFitFunEstimator_Relative() {
+  emp_assert(config.PHYLO_TRACKING());
   estimate_test_score = [this](size_t org_id, size_t test_id) {
     emp::Ptr<taxon_t> taxon_ptr = systematics_ptr->GetTaxonAt(org_id);
 
@@ -1452,6 +1471,7 @@ void ProgSynthWorld::SetupFitFunEstimator_Relative() {
 }
 
 void ProgSynthWorld::SetupFitFunEstimator_RelativeOpt() {
+  emp_assert(config.PHYLO_TRACKING());
   // estimate_test_score
   estimate_test_score = [this](size_t org_id, size_t test_id) {
     emp::Ptr<taxon_t> taxon_ptr = systematics_ptr->GetTaxonAt(org_id);
@@ -1748,12 +1768,15 @@ void ProgSynthWorld::SetupDataCollection() {
     return;
   }
   std::cout << "Configure data tracking" << std::endl;
-  SetupDataCollection_Phylodiversity();
+  if (config.PHYLO_TRACKING()) {
+    SetupDataCollection_Phylodiversity();
+  }
   SetupDataCollection_Summary();
   SetupDataCollection_Elite();
 }
 
 void ProgSynthWorld::SetupDataCollection_Phylodiversity() {
+  emp_assert(config.PHYLO_TRACKING());
   // Create phylodiversity file
   phylodiversity_file_ptr = emp::NewPtr<emp::DataFile>(
     output_dir + "phylodiversity.csv"
@@ -2039,7 +2062,7 @@ void ProgSynthWorld::SnapshotSolution() {
 
 void ProgSynthWorld::SnapshotPhylogeny() {
   // TODO - evaluate all taxa on complete training case prior to snapshotting (cache results)
-
+  emp_assert(config.PHYLO_TRACKING());
   const auto& active_taxa = systematics_ptr->GetActive();
   const auto& ancestor_taxa = systematics_ptr->GetAncestors();
   const auto& outside_taxa = systematics_ptr->GetOutside();
@@ -2097,6 +2120,7 @@ void ProgSynthWorld::SnapshotPhylogeny() {
 }
 
 void ProgSynthWorld::SnapshotPhyloGenotypes() {
+  emp_assert(config.PHYLO_TRACKING());
   std::ofstream outfile;
   outfile.open(output_dir + "phylo_genotypes_" + emp::to_string(GetUpdate()) + ".sgp");
 
