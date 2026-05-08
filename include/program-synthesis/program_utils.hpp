@@ -382,9 +382,7 @@ emp::vector<
       emp::vector<std::string> inst_components;
       // Parse instructions
       for (size_t inst_i = 0; inst_i < instruction_strs.size(); ++inst_i) {
-        std::cout << "---INSTRUCTION---" << std::endl;
         std::string& inst_str = instruction_strs[inst_i];
-        std::cout << inst_str << std::endl;
         std::string inst_name = emp::string_pop(inst_str, "(");
         emp::remove_chars(inst_name, ":");
         if (inst_name == "") continue;
