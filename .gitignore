@@ -48,3 +48,6 @@ prog_synth
 *.json
 output/
 .vscode/
+
+pyenv/
+local/

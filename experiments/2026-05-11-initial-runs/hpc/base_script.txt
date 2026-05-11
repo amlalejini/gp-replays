@@ -1,0 +1,42 @@
+#!/bin/bash
+########## Define Resources Needed with SBATCH Lines ##########
+
+#SBATCH --time=<<TIME_REQUEST>>          # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --array=<<ARRAY_ID_RANGE>>
+#SBATCH --mem=<<MEMORY_REQUEST>>        # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name <<JOB_NAME>>         # you can give your job a name for easier identification (same as -J)
+<<HPC_ACCOUNT_INFO>>
+
+########## Command Lines to Run ##########
+
+JOB_SEED_OFFSET=<<JOB_SEED_OFFSET>>
+RUN_ID=$((SLURM_ARRAY_TASK_ID - 1))
+SEED=$((JOB_SEED_OFFSET + SLURM_ARRAY_TASK_ID - 1))
+
+EXEC=<<EXEC>>
+# Setup all directories at the beginning
+CONFIG_DIR=<<CONFIG_DIR>>
+# REPO_DIR=<<REPO_DIR>>
+RUN_DIR=<<RUN_DIR>>
+TRAINING_SET=<<TRAINING_SET>>
+TESTING_SET=<<TESTING_SET>>
+
+# Load correct environment variables, modules, etc.
+<<SETUP_HPC_ENV>>
+
+mkdir -p ${RUN_DIR}
+cd ${RUN_DIR}
+<<CONFIG_CP_CMDS>>
+
+######## Run experiment ########
+cd ${RUN_DIR}
+
+<<RUN_CMDS>>
+
+######## Clean up ########
+rm ${RUN_DIR}/*.cfg
+rm ${RUN_DIR}/${TRAINING_SET}
+rm ${RUN_DIR}/${TESTING_SET}
+rm ${RUN_DIR}/${EXEC}
+
+
