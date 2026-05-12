@@ -49,7 +49,7 @@ namespace psynth {
 
 namespace world_defs {
 
-constexpr size_t TAG_SIZE = 32;
+constexpr size_t TAG_SIZE = 8;
 constexpr size_t FUNC_NUM_TAGS = 1;
 constexpr size_t INST_TAG_CNT = 1;
 constexpr size_t INST_ARG_CNT = 3;
