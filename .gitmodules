@@ -10,3 +10,6 @@
 [submodule "Catch2"]
 	path = third-party/Catch2
 	url = https://github.com/catchorg/Catch2.git
+[submodule "third-party/roll_q"]
+	path = third-party/roll_q
+	url = git@github.com:FergusonAJ/roll_q
