@@ -1,12 +1,12 @@
 Command ran: ./03_prepare_phylo_jobs.sh
-Timestamp: 05_15_26__10_37_29
+Timestamp: 05_15_26__12_03_07
 
 Most recent commit:
-commit 7461d2ed2eb904bfb2cea13fd1e98df93a860098
+commit 84d5611fa6546d605902b4ee4845c273199a0367
 Author: Austin Ferguson <ferguson.austin.j@gmail.com>
-Date:   Thu May 14 14:13:44 2026 -0400
+Date:   Fri May 15 11:04:49 2026 -0400
 
-    Grab timeseries data for original replicate
+    Add second experiment
 
 git status:
 On branch ferguson
@@ -16,12 +16,12 @@ Changes not staged for commit:
 	modified:   ../../../config_global.sh
 	modified:   ../../2026_05_13_01__small_large_double_mut/hpc/01_job_template_evolution_snapshots.sb
 	modified:   ../../2026_05_13_01__small_large_double_mut/hpc/git_snaphsot.txt
+	modified:   git_snaphsot.txt
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	../../2026_05_13_01__small_large_double_mut/hpc/03_job_template_phylo.sb
 	../../2026_05_13_01__small_large_double_mut/hpc/03_prepare_phylo_jobs.sh
-	../
 	../../../scripts/__pycache__/
 
 no changes added to commit (use "git add" and/or "git commit -a")
