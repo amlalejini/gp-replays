@@ -1,23 +1,32 @@
-Command ran: ./02_prepare_replay_jobs.sb
-Timestamp: 05_14_26__12_52_17
+Command ran: ./04_prepare_replay_rerun_jobs.sh
+Timestamp: 05_15_26__14_35_25
 
 Most recent commit:
-commit 2976dfab85a730364b150bb6274cfe734d9fa2ec
+commit bde15458001a823c4e00347b8be458308c56f5c5
 Author: Austin Ferguson <ferguson.austin.j@gmail.com>
-Date:   Tue May 12 14:14:58 2026 -0400
+Date:   Fri May 15 12:06:22 2026 -0400
 
-    Add roll_q as a submodule
+    Grab replicate summary
 
 git status:
 On branch ferguson
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../../../config_global.sh
+	modified:   01_job_template_evolution_snapshots.sb
+	modified:   git_snaphsot.txt
+	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/00_job_template_evolution.sb
+	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/data/combined_evo_data.csv
+	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/data/scripts/02_scrape_replays.sh
+	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/git_snaphsot.txt
+
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	../../../config_global.sh
-	../../2026_05_12_01__inital_small_large_short_tag/
-	../
-	../../../global_shared_files/
-	../../../include/program-synthesis/.ProgSynthWorld.hpp.swp
+	03_job_template_phylo.sb
+	03_prepare_phylo_jobs.sh
+	04_job_template_replay_reruns.sh
+	04_prepare_replay_rerun_jobs.sh
 	../../../scripts/__pycache__/
-	../../../scripts/parse_cmd_args.sh
 
-nothing added to commit but untracked files present (use "git add" to track)
+no changes added to commit (use "git add" and/or "git commit -a")
