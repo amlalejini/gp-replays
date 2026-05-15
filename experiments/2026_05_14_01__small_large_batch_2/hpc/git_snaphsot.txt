@@ -1,12 +1,12 @@
-Command ran: ./03_prepare_phylo_jobs.sh
-Timestamp: 05_15_26__12_03_07
+Command ran: ./04_prepare_replay_rerun_jobs.sh
+Timestamp: 05_15_26__15_17_57
 
 Most recent commit:
-commit 84d5611fa6546d605902b4ee4845c273199a0367
+commit 0359f38f6839f6e1d4b7c42fd95f8b0b4cb37eb1
 Author: Austin Ferguson <ferguson.austin.j@gmail.com>
-Date:   Fri May 15 11:04:49 2026 -0400
+Date:   Fri May 15 14:56:49 2026 -0400
 
-    Add second experiment
+    Add phylogeny tracing support to exp 1
 
 git status:
 On branch ferguson
@@ -14,14 +14,15 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   ../../../config_global.sh
-	modified:   ../../2026_05_13_01__small_large_double_mut/hpc/01_job_template_evolution_snapshots.sb
-	modified:   ../../2026_05_13_01__small_large_double_mut/hpc/git_snaphsot.txt
+	modified:   00_job_template_evolution.sb
+	modified:   data/combined_evo_data.csv
+	modified:   data/scripts/02_scrape_replays.sh
 	modified:   git_snaphsot.txt
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	../../2026_05_13_01__small_large_double_mut/hpc/03_job_template_phylo.sb
-	../../2026_05_13_01__small_large_double_mut/hpc/03_prepare_phylo_jobs.sh
+	04_job_template_replay_reruns.sh
+	04_prepare_replay_rerun_jobs.sh
 	../../../scripts/__pycache__/
 
 no changes added to commit (use "git add" and/or "git commit -a")

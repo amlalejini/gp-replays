@@ -402,6 +402,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_102,rep_001,17,100,101,17,900000,0,1,100,100,1,-0,100,0
 305,gen_102,rep_002,98,100,0,98,4950000,0,0,100,100,257,7.80568,100,0
 305,gen_102,rep_003,9,100,76,9,500000,0,1,100,100,1,-0,100,0
+305,gen_102,rep_004,81,100,83,81,4100000,0,1,100,100,1,-0,100,0
 305,gen_102,rep_005,98,95,3,98,4950000,0,0,100,95,279,7.93238,100,0
 305,gen_102,rep_006,46,100,58,46,2350000,0,1,100,100,3,1.58206,100,0
 305,gen_102,rep_007,27,100,17,27,1400000,0,1,100,100,4,1.99915,100,0
@@ -606,6 +607,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_104,rep_006,96,98,169,96,4850000,0,0,100,98,120,3.14075,100,0
 305,gen_104,rep_007,56,100,323,56,2850000,0,1,100,100,1,-0,100,0
 305,gen_104,rep_008,34,100,286,34,1750000,0,1,100,100,2,0.999434,100,0
+305,gen_104,rep_009,75,100,123,75,3800000,0,1,100,100,8,2.98109,100,0
 305,gen_104,rep_010,51,100,188,51,2600000,0,1,100,100,2,0.997737,100,0
 305,gen_104,rep_011,27,100,27,27,1400000,0,1,100,100,256,7.79229,100,0
 305,gen_104,rep_012,25,100,2,25,1300000,0,1,100,100,283,7.93432,100,0
@@ -997,14 +999,14 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_107,rep_098,23,100,103,23,1200000,0,1,100,100,1,-0,100,0
 305,gen_107,rep_099,24,100,18,24,1250000,0,1,100,100,7,2.7958,100,0
 305,gen_107,rep_100,24,100,207,24,1250000,0,1,100,100,1,-0,100,0
-305,gen_108,rep_001,  - Loaded testing set size: 1000,1000,  - Loaded testing set size: 1000,
-305,gen_108,rep_002,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,
+305,gen_108,rep_001,8,100,146,8,450000,0,1,100,100,1,-0,100,0
+305,gen_108,rep_002,12,100,344,12,650000,0,1,100,100,1,-0,100,0
 305,gen_108,rep_003,17,100,71,17,900000,0,1,100,100,1,-0,100,0
 305,gen_108,rep_004,17,100,40,17,900000,0,1,100,100,1,-0,100,0
 305,gen_108,rep_005,41,100,202,41,2100000,0,1,100,100,2,0.999065,100,0
 305,gen_108,rep_006,17,100,186,17,900000,0,1,100,100,1,-0,100,0
-305,gen_108,rep_007,,,,
-305,gen_108,rep_008,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,
+305,gen_108,rep_007,35,100,176,35,1800000,0,1,100,100,1,-0,100,0
+305,gen_108,rep_008,39,100,216,39,2000000,0,1,100,100,1,-0,100,0
 305,gen_108,rep_009,19,100,330,19,1000000,0,1,100,100,1,-0,100,0
 305,gen_108,rep_010,25,100,54,25,1300000,0,1,100,100,6,2.56831,100,0
 305,gen_108,rep_011,10,100,25,10,550000,0,1,100,100,2,0.997737,100,0
@@ -1899,10 +1901,10 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_115,rep_100,25,100,321,25,1300000,0,1,100,100,1,-0,100,0
 305,gen_116,rep_001,14,100,319,14,750000,0,1,100,100,3,1.57606,100,0
 305,gen_116,rep_002,6,100,264,6,350000,0,1,100,100,2,0.999815,100,0
-305,gen_116,rep_003,Setting up event library.,Setting up event library.,Setting up event library.,
-305,gen_116,rep_004,,,,
-305,gen_116,rep_005,,,,
-305,gen_116,rep_006,set MUT_RATE_INST_ARG_SUB 0.002    # InstArgSub rate,set MUT_RATE_INST_ARG_SUB 0.002    # InstArgSub rate,set MUT_RATE_INST_ARG_SUB 0.002    # InstArgSub rate,
+305,gen_116,rep_003,13,100,416,13,700000,0,1,100,100,1,-0,100,0
+305,gen_116,rep_004,7,100,60,7,400000,0,1,100,100,5,2.31596,100,0
+305,gen_116,rep_005,24,100,445,24,1250000,0,1,100,100,1,-0,100,0
+305,gen_116,rep_006,20,100,438,20,1050000,0,1,100,100,1,-0,100,0
 305,gen_116,rep_007,12,100,201,12,650000,0,1,100,100,2,0.999065,100,0
 305,gen_116,rep_008,13,100,223,13,700000,0,1,100,100,1,-0,100,0
 305,gen_116,rep_009,18,100,122,18,950000,0,1,100,100,1,-0,100,0
@@ -3069,7 +3071,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_19,rep_070,181,77,8,181,9100000,0,0,100,77,271,7.83232,100,0
 305,gen_19,rep_071,181,92,1,181,9100000,0,0,100,92,259,7.71063,100,0
 305,gen_19,rep_072,160,93,0,170,8550000,0,0,100,93,262,7.84247,100,0
-305,gen_19,rep_073,|    How am I configured?    |,|    How am I configured?    |,|    How am I configured?    |,
+305,gen_19,rep_073,181,79,75,181,9100000,0,0,100,79,252,7.6715,100,0
 305,gen_19,rep_074,62,100,190,62,3150000,0,1,100,100,1,-0,100,0
 305,gen_19,rep_075,181,94,10,181,9100000,0,0,100,94,267,7.86052,100,0
 305,gen_19,rep_076,181,78,2,181,9100000,0,0,100,78,299,8.05023,100,0
@@ -3334,8 +3336,8 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_21,rep_035,60,100,29,60,3050000,0,1,100,100,1,-0,100,0
 305,gen_21,rep_036,179,79,79,179,9000000,0,0,100,79,269,7.80927,100,0
 305,gen_21,rep_037,179,89,10,179,9000000,0,0,100,89,256,7.75991,100,0
-305,gen_21,rep_038,Initializing the population.,Initializing the population.,Initializing the population.,update,evaluations,test_estimations,found_solution,pop_training_coverage,max_approx_agg_score,num_unique_selected,entropy_selected_ids,parents_training_coverage,training_coverage_loss
-305,gen_21,rep_039,Initializing the population.,Initializing the population.,Initializing the population.,update,evaluations,test_estimations,found_solution,pop_training_coverage,max_approx_agg_score,num_unique_selected,entropy_selected_ids,parents_training_coverage,training_coverage_loss
+305,gen_21,rep_038,179,77,4,179,9000000,0,0,100,77,277,7.83923,100,0
+305,gen_21,rep_039,179,75,3,179,9000000,0,0,100,75,307,8.06681,100,0
 305,gen_21,rep_040,179,75,1,179,9000000,0,0,100,75,302,8.05181,100,0
 305,gen_21,rep_041,179,78,45,179,9000000,0,0,100,78,275,7.8336,100,0
 305,gen_21,rep_042,179,76,1,179,9000000,0,0,100,76,325,8.194,100,0
@@ -3600,8 +3602,8 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_24,rep_001,176,76,43,176,8850000,0,0,100,76,256,7.72884,100,0
 305,gen_24,rep_002,176,90,5,176,8850000,0,0,100,90,273,7.92753,100,0
 305,gen_24,rep_003,176,78,3,176,8850000,0,0,100,78,277,7.88374,100,0
-305,gen_24,rep_004,# Population initialization settings,# Population initialization settings,# Population initialization settings,
-305,gen_24,rep_005,# Population initialization settings,# Population initialization settings,# Population initialization settings,
+305,gen_24,rep_004,176,95,0,176,8850000,0,0,100,95,287,7.97546,100,0
+305,gen_24,rep_005,176,92,2,176,8850000,0,0,100,92,252,7.77396,100,0
 305,gen_24,rep_006,176,76,63,176,8850000,0,0,100,76,257,7.73674,100,0
 305,gen_24,rep_007,176,78,88,176,8850000,0,0,100,78,265,7.78698,100,0
 305,gen_24,rep_008,176,75,1,176,8850000,0,0,100,75,304,8.07148,100,0
@@ -4042,7 +4044,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_28,rep_043,172,85,1,172,8650000,0,0,100,85,259,7.12799,100,0
 305,gen_28,rep_044,172,75,11,172,8650000,0,0,100,75,244,7.62053,100,0
 305,gen_28,rep_045,172,76,104,172,8650000,0,0,100,76,248,7.04886,100,0
-305,gen_28,rep_046,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,
+305,gen_28,rep_046,172,77,2,172,8650000,0,0,100,77,250,7.66512,100,0
 305,gen_28,rep_047,172,92,0,172,8650000,0,0,100,92,277,7.93141,100,0
 305,gen_28,rep_048,172,75,1,172,8650000,0,0,100,75,315,8.12597,100,0
 305,gen_28,rep_049,172,75,20,172,8650000,0,0,100,75,271,7.70643,100,0
@@ -4549,7 +4551,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_32,rep_050,168,87,278,168,8450000,0,0,100,87,193,5.42507,100,0
 305,gen_32,rep_051,120,78,2,130,6550000,0,0,100,80,264,7.84147,100,0
 305,gen_32,rep_052,120,78,2,130,6550000,0,0,100,78,298,8.05266,100,0
-305,gen_32,rep_053,Initializing the population.,Initializing the population.,Initializing the population.,update,evaluations,test_estimations,found_solution,pop_training_coverage,max_approx_agg_score,num_unique_selected,entropy_selected_ids,parents_training_coverage,training_coverage_loss
+305,gen_32,rep_053,168,84,36,168,8450000,0,0,100,84,257,7.72841,100,0
 305,gen_32,rep_054,168,75,1,168,8450000,0,0,100,75,299,8.04348,100,0
 305,gen_32,rep_055,168,81,36,168,8450000,0,0,100,81,259,7.75377,100,0
 305,gen_32,rep_056,168,75,6,168,8450000,0,0,100,75,272,7.72223,100,0
@@ -5098,7 +5100,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_37,rep_099,163,95,2,163,8200000,0,0,100,95,258,7.77473,100,0
 305,gen_37,rep_100,163,91,4,163,8200000,0,0,100,91,268,7.89048,100,0
 305,gen_38,rep_001,162,77,11,162,8150000,0,0,100,77,270,7.81984,100,0
-305,gen_38,rep_002,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,
+305,gen_38,rep_002,162,77,142,162,8150000,0,0,100,77,251,7.69825,100,0
 305,gen_38,rep_003,162,78,21,162,8150000,0,0,100,78,254,7.75377,100,0
 305,gen_38,rep_004,162,78,2,162,8150000,0,0,100,78,263,7.80381,100,0
 305,gen_38,rep_005,162,92,1,162,8150000,0,0,100,92,277,7.93541,100,0
@@ -5731,7 +5733,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_43,rep_032,157,81,10,157,7900000,0,0,100,81,263,7.79927,100,0
 305,gen_43,rep_033,157,76,8,157,7900000,0,0,100,76,271,7.85012,100,0
 305,gen_43,rep_034,157,81,55,157,7900000,0,0,100,81,252,7.71395,100,0
-305,gen_43,rep_035,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,set TEST_DOWNSAMPLE_RATE 0.5       # Proportion of training cases to down-sample each generation,
+305,gen_43,rep_035,157,81,54,157,7900000,0,0,100,81,279,7.93374,100,0
 305,gen_43,rep_036,157,76,0,157,7900000,0,0,100,76,312,8.12192,100,0
 305,gen_43,rep_037,157,90,3,157,7900000,0,0,100,90,251,7.04486,100,0
 305,gen_43,rep_038,157,76,0,157,7900000,0,0,100,76,323,8.16487,100,0
@@ -6108,8 +6110,8 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_47,rep_009,153,81,19,153,7700000,0,0,100,81,256,7.73846,100,0
 305,gen_47,rep_010,153,75,2,153,7700000,0,0,100,75,297,8.03226,100,0
 305,gen_47,rep_011,153,100,2,153,7700000,0,0,100,100,269,7.90404,100,0
-305,gen_47,rep_012,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,
-305,gen_47,rep_013,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,set MUT_RATE_FUNC_DEL 0            # FuncDel rate,
+305,gen_47,rep_012,153,88,6,153,7700000,0,0,100,88,250,7.63978,100,0
+305,gen_47,rep_013,153,95,5,153,7700000,0,0,100,95,263,7.84799,100,0
 305,gen_47,rep_014,153,82,14,153,7700000,0,0,100,82,269,7.81601,100,0
 305,gen_47,rep_015,153,75,2,153,7700000,0,0,100,75,311,8.1309,100,0
 305,gen_47,rep_016,153,90,6,153,7700000,0,0,100,90,272,7.87899,100,0
@@ -6810,6 +6812,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_53,rep_011,147,92,2,147,7400000,0,0,100,92,277,7.90975,100,0
 305,gen_53,rep_012,147,75,0,147,7400000,0,0,100,75,309,8.10283,100,0
 305,gen_53,rep_013,147,79,9,147,7400000,0,0,100,79,255,7.70315,100,0
+305,gen_53,rep_014,147,82,0,147,7400000,0,0,100,82,260,7.75361,100,0
 305,gen_53,rep_015,147,91,5,147,7400000,0,0,100,91,52,2.70871,100,0
 305,gen_53,rep_016,147,76,2,147,7400000,0,0,100,76,313,8.12625,100,0
 305,gen_53,rep_017,147,76,0,147,7400000,0,0,100,76,263,7.80779,100,0
@@ -6997,10 +7000,10 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_54,rep_099,146,77,50,146,7350000,0,0,100,77,264,7.82148,100,0
 305,gen_54,rep_100,146,85,51,146,7350000,0,0,100,85,260,7.77967,100,0
 305,gen_55,rep_001,145,91,0,145,7300000,0,0,100,91,250,7.43804,100,0
-305,gen_55,rep_002,,,,
-305,gen_55,rep_003,|    How am I configured?    |,|    How am I configured?    |,|    How am I configured?    |,
+305,gen_55,rep_002,145,94,1,145,7300000,0,0,100,94,273,7.89081,100,0
+305,gen_55,rep_003,145,75,1,145,7300000,0,0,100,75,312,8.14225,100,0
 305,gen_55,rep_004,145,78,178,145,7300000,0,0,100,78,276,7.87531,100,0
-305,gen_55,rep_005,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
+305,gen_55,rep_005,145,88,3,145,7300000,0,0,100,88,289,8.00774,100,0
 305,gen_55,rep_006,145,80,17,145,7300000,0,0,100,80,252,7.67,100,0
 305,gen_55,rep_007,145,75,0,145,7300000,0,0,100,75,318,8.13936,100,0
 305,gen_55,rep_008,140,100,385,140,7050000,0,1,100,100,1,-0,100,0
@@ -7026,7 +7029,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_55,rep_028,145,78,0,145,7300000,0,0,100,78,297,8.02407,100,0
 305,gen_55,rep_029,145,78,0,145,7300000,0,0,100,78,250,7.47386,100,0
 305,gen_55,rep_030,145,94,0,145,7300000,0,0,100,94,269,7.87961,100,0
-305,gen_55,rep_031,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,
+305,gen_55,rep_031,145,76,0,145,7300000,0,0,100,76,309,8.10341,100,0
 305,gen_55,rep_032,117,100,463,117,5900000,0,1,100,100,1,-0,100,0
 305,gen_55,rep_033,132,100,22,132,6650000,0,1,100,100,1,-0,100,0
 305,gen_55,rep_034,145,76,0,145,7300000,0,0,100,76,305,8.06105,100,0
@@ -7266,7 +7269,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_57,rep_068,143,75,6,143,7200000,0,0,100,75,309,8.07752,100,0
 305,gen_57,rep_069,143,95,1,143,7200000,0,0,100,95,287,7.98072,100,0
 305,gen_57,rep_070,143,77,196,143,7200000,0,0,100,77,249,7.7118,100,0
-305,gen_57,rep_071,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,
+305,gen_57,rep_071,143,76,1,143,7200000,0,0,100,76,313,8.12487,100,0
 305,gen_57,rep_072,143,95,0,143,7200000,0,0,100,95,268,7.87506,100,0
 305,gen_57,rep_073,143,90,4,143,7200000,0,0,100,90,280,7.95495,100,0
 305,gen_57,rep_074,143,77,14,143,7200000,0,0,100,77,267,7.82176,100,0
@@ -7357,18 +7360,18 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_58,rep_059,142,77,75,142,7150000,0,0,100,77,265,7.83097,100,0
 305,gen_58,rep_060,68,100,434,68,3450000,0,1,100,100,1,-0,100,0
 305,gen_58,rep_061,142,95,3,142,7150000,0,0,100,95,277,7.93895,100,0
-305,gen_58,rep_062,,,,
+305,gen_58,rep_062,142,75,3,142,7150000,0,0,100,75,278,7.74361,100,0
 305,gen_58,rep_063,142,77,218,142,7150000,0,0,100,77,260,7.77329,100,0
 305,gen_58,rep_064,142,76,0,142,7150000,0,0,100,76,270,7.71427,100,0
 305,gen_58,rep_065,142,87,362,142,7150000,0,0,100,87,70,2.72561,100,0
 305,gen_58,rep_066,142,94,0,142,7150000,0,0,100,94,273,7.89048,100,0
-305,gen_58,rep_067,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,
-305,gen_58,rep_068,                                   # none,                                   # none,                                   # none,
+305,gen_58,rep_067,142,75,0,142,7150000,0,0,100,75,313,8.12703,100,0
+305,gen_58,rep_068,142,89,6,142,7150000,0,0,100,89,279,7.96394,100,0
 305,gen_58,rep_069,142,75,4,142,7150000,0,0,100,75,252,7.56242,100,0
 305,gen_58,rep_070,142,78,24,142,7150000,0,0,100,78,264,7.77807,100,0
 305,gen_58,rep_071,142,94,0,142,7150000,0,0,100,94,267,7.85623,100,0
 305,gen_58,rep_072,142,76,1,142,7150000,0,0,100,76,307,8.08899,100,0
-305,gen_58,rep_073,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,
+305,gen_58,rep_073,142,75,0,142,7150000,0,0,100,75,305,8.05923,100,0
 305,gen_58,rep_074,142,94,0,142,7150000,0,0,100,94,257,7.73358,100,0
 305,gen_58,rep_075,142,86,30,142,7150000,0,0,100,86,254,7.64545,100,0
 305,gen_58,rep_076,142,98,11,142,7150000,0,0,100,98,278,7.94237,100,0
@@ -7438,7 +7441,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_59,rep_040,141,77,25,141,7100000,0,0,100,77,260,7.77136,100,0
 305,gen_59,rep_041,141,100,0,141,7100000,0,0,100,100,268,7.89419,100,0
 305,gen_59,rep_042,141,77,14,141,7100000,0,0,100,77,263,7.69325,100,0
-305,gen_59,rep_043,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
+305,gen_59,rep_043,141,76,145,141,7100000,0,0,100,76,277,7.89939,100,0
 305,gen_59,rep_044,141,75,0,141,7100000,0,0,100,75,319,8.14957,100,0
 305,gen_59,rep_045,141,75,3,141,7100000,0,0,100,75,312,8.1018,100,0
 305,gen_59,rep_046,141,86,44,141,7100000,0,0,100,86,257,7.77038,100,0
@@ -7859,19 +7862,19 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_62,rep_061,57,100,392,57,2900000,0,1,100,100,1,-0,100,0
 305,gen_62,rep_062,138,95,1,138,6950000,0,0,100,95,286,7.98335,100,0
 305,gen_62,rep_063,138,77,13,138,6950000,0,0,100,77,276,7.85726,100,0
-305,gen_62,rep_064,set ANCESTOR_FILE_PATH ancestor.json                                                                                                             # Path to ancestor file,set ANCESTOR_FILE_PATH ancestor.json                                                                                                             # Path to ancestor file,set ANCESTOR_FILE_PATH ancestor.json                                                                                                             # Path to ancestor file,
+305,gen_62,rep_064,138,81,144,138,6950000,0,0,100,81,253,7.69274,100,0
 305,gen_62,rep_065,138,75,1,138,6950000,0,0,100,75,304,8.05976,100,0
 305,gen_62,rep_066,138,75,115,138,6950000,0,0,100,75,255,7.70112,100,0
 305,gen_62,rep_067,138,75,60,138,6950000,0,0,100,75,273,7.87557,100,0
 305,gen_62,rep_068,138,76,0,138,6950000,0,0,100,76,318,8.14283,100,0
-305,gen_62,rep_069,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
-305,gen_62,rep_070,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,
+305,gen_62,rep_069,138,76,26,138,6950000,0,0,100,76,270,7.8409,100,0
+305,gen_62,rep_070,138,77,11,138,6950000,0,0,100,77,271,7.82387,100,0
 305,gen_62,rep_071,138,78,26,138,6950000,0,0,100,78,245,7.6325,100,0
 305,gen_62,rep_072,138,95,2,138,6950000,0,0,100,95,214,6.4264,100,0
 305,gen_62,rep_073,138,78,52,138,6950000,0,0,100,78,283,7.91698,100,0
 305,gen_62,rep_074,138,93,0,138,6950000,0,0,100,93,268,7.87845,100,0
 305,gen_62,rep_075,97,100,97,97,4900000,0,1,100,100,1,-0,100,0
-305,gen_62,rep_076,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,set EVAL_CPU_CYCLES_PER_TEST 128   # Maximum number of CPU cycles programs are run for single test case.,
+305,gen_62,rep_076,138,99,0,138,6950000,0,0,100,99,270,7.87689,100,0
 305,gen_62,rep_077,138,95,1,138,6950000,0,0,100,95,260,7.83184,100,0
 305,gen_62,rep_078,138,76,8,138,6950000,0,0,100,76,271,7.8452,100,0
 305,gen_62,rep_079,138,79,44,138,6950000,0,0,100,79,253,7.71919,100,0
@@ -7885,7 +7888,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_62,rep_087,138,100,0,138,6950000,0,0,100,100,272,7.9099,100,0
 305,gen_62,rep_088,138,91,0,138,6950000,0,0,100,91,284,7.94404,100,0
 305,gen_62,rep_089,138,91,0,138,6950000,0,0,100,91,287,7.99397,100,0
-305,gen_62,rep_090,                                   # relative,                                   # relative,                                   # relative,
+305,gen_62,rep_090,138,95,5,138,6950000,0,0,100,95,272,7.91292,100,0
 305,gen_62,rep_091,138,94,7,138,6950000,0,0,100,94,229,7.49035,100,0
 305,gen_62,rep_092,138,78,0,138,6950000,0,0,100,78,312,8.12066,100,0
 305,gen_62,rep_093,138,76,0,138,6950000,0,0,100,76,307,8.08776,100,0
@@ -8232,17 +8235,18 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_66,rep_034,134,90,2,134,6750000,0,0,100,90,280,7.93665,100,0
 305,gen_66,rep_035,134,93,1,134,6750000,0,0,100,93,274,7.90399,100,0
 305,gen_66,rep_036,134,99,0,134,6750000,0,0,100,99,272,7.92001,100,0
-305,gen_66,rep_037,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,set EVAL_MAX_PHYLO_SEARCH_DEPTH 1  # Maximum phylogeny search depth when estimating fitness.,
+305,gen_66,rep_037,84,100,395,84,4250000,0,1,100,100,1,-0,100,0
 305,gen_66,rep_038,134,91,5,134,6750000,0,0,100,91,269,7.87715,100,0
 305,gen_66,rep_039,134,78,24,134,6750000,0,0,100,78,239,7.43917,100,0
 305,gen_66,rep_040,134,78,13,134,6750000,0,0,100,78,264,7.80482,100,0
 305,gen_66,rep_041,134,77,24,134,6750000,0,0,100,77,260,7.7761,100,0
 305,gen_66,rep_042,20,75,0,20,1050000,0,0,100,75,307,8.09294,100,0
-305,gen_66,rep_043,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
+305,gen_66,rep_043,134,76,0,134,6750000,0,0,100,76,306,8.09747,100,0
 305,gen_66,rep_044,134,75,0,134,6750000,0,0,100,75,314,8.13845,100,0
 305,gen_66,rep_045,134,87,1,134,6750000,0,0,100,87,273,7.9305,100,0
 305,gen_66,rep_046,134,93,2,134,6750000,0,0,100,93,277,7.89987,100,0
 305,gen_66,rep_047,134,78,103,134,6750000,0,0,100,78,255,7.73356,100,0
+305,gen_66,rep_048,134,97,0,134,6750000,0,0,100,97,261,7.81657,100,0
 305,gen_66,rep_049,134,91,0,134,6750000,0,0,100,91,292,7.96963,100,0
 305,gen_66,rep_050,134,75,1,134,6750000,0,0,100,75,316,8.13825,100,0
 305,gen_66,rep_051,134,76,0,134,6750000,0,0,100,76,304,8.08014,100,0
@@ -8260,7 +8264,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_66,rep_063,120,95,34,120,6050000,0,0,100,95,202,6.49864,100,0
 305,gen_66,rep_064,134,75,0,134,6750000,0,0,100,75,264,7.72172,100,0
 305,gen_66,rep_065,102,100,21,102,5150000,0,1,100,100,3,1.58166,100,0
-305,gen_66,rep_066,set MUT_RATE_INST_DEL 0.002        # InstDel rate,set MUT_RATE_INST_DEL 0.002        # InstDel rate,set MUT_RATE_INST_DEL 0.002        # InstDel rate,
+305,gen_66,rep_066,134,75,1,134,6750000,0,0,100,75,309,8.07814,100,0
 305,gen_66,rep_067,134,75,11,134,6750000,0,0,100,75,275,7.84732,100,0
 305,gen_66,rep_068,134,95,1,134,6750000,0,0,100,95,289,7.9989,100,0
 305,gen_66,rep_069,134,90,2,134,6750000,0,0,100,90,274,7.91941,100,0
@@ -8285,7 +8289,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_66,rep_088,134,75,0,134,6750000,0,0,100,75,313,8.1134,100,0
 305,gen_66,rep_089,134,92,2,134,6750000,0,0,100,92,269,7.8577,100,0
 305,gen_66,rep_090,107,100,440,107,5400000,0,1,100,100,276,7.93199,100,0
-305,gen_66,rep_091,set EVAL_MODE full                 # Evaluation mode. Options:,set EVAL_MODE full                 # Evaluation mode. Options:,set EVAL_MODE full                 # Evaluation mode. Options:,
+305,gen_66,rep_091,134,95,0,134,6750000,0,0,100,95,265,7.87864,100,0
 305,gen_66,rep_092,134,87,6,134,6750000,0,0,100,87,275,7.84175,100,0
 305,gen_66,rep_093,134,90,2,134,6750000,0,0,100,90,273,7.90153,100,0
 305,gen_66,rep_094,134,93,0,134,6750000,0,0,100,93,285,7.99594,100,0
@@ -8385,11 +8389,11 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_67,rep_088,133,94,1,133,6700000,0,0,100,94,264,7.83951,100,0
 305,gen_67,rep_089,133,100,0,133,6700000,0,0,100,100,276,7.92963,100,0
 305,gen_67,rep_090,133,75,65,133,6700000,0,0,100,75,267,7.81577,100,0
-305,gen_67,rep_091,set MUT_RATE_INST_DEL 0.002        # InstDel rate,set MUT_RATE_INST_DEL 0.002        # InstDel rate,set MUT_RATE_INST_DEL 0.002        # InstDel rate,
+305,gen_67,rep_091,133,88,5,133,6700000,0,0,100,88,246,7.52767,100,0
 305,gen_67,rep_092,133,75,0,133,6700000,0,0,100,75,287,7.98243,100,0
-305,gen_67,rep_093,set EVAL_FIT_EST_MODE none         # Fitness function estimation method. Options:,set EVAL_FIT_EST_MODE none         # Fitness function estimation method. Options:,set EVAL_FIT_EST_MODE none         # Fitness function estimation method. Options:,
-305,gen_67,rep_094,set MUT_RATE_INST_INS 0.002        # InstIns rate,set MUT_RATE_INST_INS 0.002        # InstIns rate,set MUT_RATE_INST_INS 0.002        # InstIns rate,
-305,gen_67,rep_095,set MUT_RATE_INST_INS 0.002        # InstIns rate,set MUT_RATE_INST_INS 0.002        # InstIns rate,set MUT_RATE_INST_INS 0.002        # InstIns rate,
+305,gen_67,rep_093,133,82,61,133,6700000,0,0,100,82,254,7.69768,100,0
+305,gen_67,rep_094,133,75,0,133,6700000,0,0,100,75,309,8.09207,100,0
+305,gen_67,rep_095,133,75,0,133,6700000,0,0,100,75,312,8.13103,100,0
 305,gen_67,rep_096,133,91,0,133,6700000,0,0,100,91,256,7.79999,100,0
 305,gen_67,rep_097,133,76,70,133,6700000,0,0,100,76,275,7.88802,100,0
 305,gen_67,rep_098,133,91,10,133,6700000,0,0,100,91,261,7.75731,100,0
@@ -9123,6 +9127,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_74,rep_026,126,75,0,126,6350000,0,0,100,75,305,8.07601,100,0
 305,gen_74,rep_027,126,89,2,126,6350000,0,0,100,89,268,7.87277,100,0
 305,gen_74,rep_028,126,92,0,126,6350000,0,0,100,92,278,7.92479,100,0
+305,gen_74,rep_029,126,75,0,126,6350000,0,0,100,75,305,8.0778,100,0
 305,gen_74,rep_030,126,77,23,126,6350000,0,0,100,77,251,7.6944,100,0
 305,gen_74,rep_031,126,90,3,126,6350000,0,0,100,90,268,7.87112,100,0
 305,gen_74,rep_032,126,75,0,126,6350000,0,0,100,75,318,8.14205,100,0
@@ -9305,15 +9310,15 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_76,rep_009,124,75,1,124,6250000,0,0,100,75,301,8.0432,100,0
 305,gen_76,rep_010,124,76,2,124,6250000,0,0,100,76,306,8.07556,100,0
 305,gen_76,rep_011,124,75,0,124,6250000,0,0,100,75,309,8.09042,100,0
-305,gen_76,rep_012,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
+305,gen_76,rep_012,124,80,15,124,6250000,0,0,100,80,252,7.68048,100,0
 305,gen_76,rep_013,124,93,0,124,6250000,0,0,100,93,267,7.86794,100,0
 305,gen_76,rep_014,124,85,1,124,6250000,0,0,100,85,240,7.41058,100,0
 305,gen_76,rep_015,124,75,2,124,6250000,0,0,100,75,314,8.13005,100,0
 305,gen_76,rep_016,124,77,295,124,6250000,0,0,100,77,262,7.57256,100,0
 305,gen_76,rep_017,124,75,0,124,6250000,0,0,100,75,301,8.06997,100,0
 305,gen_76,rep_018,124,87,1,124,6250000,0,0,100,87,197,6.33886,100,0
-305,gen_76,rep_019,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,set EVAL_ADJ_EST 0                 # Penalize estimates by distance?,
-305,gen_76,rep_020,Initializing the population.,Initializing the population.,Initializing the population.,update,evaluations,test_estimations,found_solution,pop_training_coverage,max_approx_agg_score,num_unique_selected,entropy_selected_ids,parents_training_coverage,training_coverage_loss
+305,gen_76,rep_019,124,100,1,124,6250000,0,0,100,100,286,7.98768,100,0
+305,gen_76,rep_020,124,77,40,124,6250000,0,0,100,77,257,7.70377,100,0
 305,gen_76,rep_021,124,78,0,124,6250000,0,0,100,78,308,8.09883,100,0
 305,gen_76,rep_022,124,90,12,124,6250000,0,0,100,90,290,7.98505,100,0
 305,gen_76,rep_023,124,92,1,124,6250000,0,0,100,92,250,7.53402,100,0
@@ -9514,7 +9519,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_78,rep_018,122,78,0,122,6150000,0,0,100,78,304,8.09128,100,0
 305,gen_78,rep_019,35,100,330,35,1800000,0,1,100,100,265,7.86688,100,0
 305,gen_78,rep_020,122,85,0,122,6150000,0,0,100,85,272,7.88505,100,0
-305,gen_78,rep_021,set PRG_INST_MIN_ARG_VAL -4    # Minimum instruction-argment value,set PRG_INST_MIN_ARG_VAL -4    # Minimum instruction-argment value,set PRG_INST_MIN_ARG_VAL -4    # Minimum instruction-argment value,
+305,gen_78,rep_021,82,100,193,82,4150000,0,1,100,100,1,-0,100,0
 305,gen_78,rep_022,122,92,1,122,6150000,0,0,100,92,277,7.87134,100,0
 305,gen_78,rep_023,122,95,1,122,6150000,0,0,100,95,253,7.7809,100,0
 305,gen_78,rep_024,122,75,73,122,6150000,0,0,100,75,266,7.81698,100,0
@@ -9808,7 +9813,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_80,rep_012,120,75,0,120,6050000,0,0,100,75,311,8.1016,100,0
 305,gen_80,rep_013,120,88,0,120,6050000,0,0,100,88,268,7.88695,100,0
 305,gen_80,rep_014,120,94,0,120,6050000,0,0,100,94,263,7.83302,100,0
-305,gen_80,rep_015,                                   # full,                                   # full,                                   # full,
+305,gen_80,rep_015,120,75,0,120,6050000,0,0,100,75,300,8.04616,100,0
 305,gen_80,rep_016,120,76,0,120,6050000,0,0,100,76,315,8.13319,100,0
 305,gen_80,rep_017,120,75,1,120,6050000,0,0,100,75,319,8.14952,100,0
 305,gen_80,rep_018,79,100,141,79,4000000,0,1,100,100,255,7.8018,100,0
@@ -9898,9 +9903,9 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_81,rep_002,119,91,2,119,6000000,0,0,100,91,265,7.82069,100,0
 305,gen_81,rep_003,119,81,34,119,6000000,0,0,100,81,270,7.82509,100,0
 305,gen_81,rep_004,119,76,4,119,6000000,0,0,100,76,308,8.08499,100,0
-305,gen_81,rep_005,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,
-305,gen_81,rep_006,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,
-305,gen_81,rep_007,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,set PRG_INST_MAX_ARG_VAL 4     # Maximum instruction-argument value,
+305,gen_81,rep_005,119,79,0,119,6000000,0,0,100,79,260,7.74331,100,0
+305,gen_81,rep_006,119,83,36,119,6000000,0,0,100,83,272,7.84881,100,0
+305,gen_81,rep_007,119,92,2,119,6000000,0,0,100,92,267,7.844,100,0
 305,gen_81,rep_008,119,89,2,119,6000000,0,0,100,89,281,7.9423,100,0
 305,gen_81,rep_009,119,85,2,119,6000000,0,0,100,85,304,8.07923,100,0
 305,gen_81,rep_010,119,92,10,119,6000000,0,0,100,92,270,7.90295,100,0
@@ -10896,7 +10901,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_9,rep_100,191,85,0,191,9600000,0,0,100,85,273,7.80436,100,0
 305,gen_90,rep_001,110,94,0,110,5550000,0,0,100,94,258,7.81991,100,0
 305,gen_90,rep_002,36,100,212,36,1850000,0,1,100,100,1,-0,100,0
-305,gen_90,rep_003,--- Setting up ProgSynth ---,--- Setting up ProgSynth ---,--- Setting up ProgSynth ---,
+305,gen_90,rep_003,110,76,1,110,5550000,0,0,100,76,253,7.67464,100,0
 305,gen_90,rep_004,110,75,0,110,5550000,0,0,100,75,301,8.06552,100,0
 305,gen_90,rep_005,110,86,304,110,5550000,0,0,100,86,238,7.42126,100,0
 305,gen_90,rep_006,110,79,53,110,5550000,0,0,100,79,262,7.79881,100,0
@@ -10904,13 +10909,13 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_90,rep_008,110,75,0,110,5550000,0,0,100,75,307,8.08947,100,0
 305,gen_90,rep_009,110,92,0,110,5550000,0,0,100,92,273,7.90317,100,0
 305,gen_90,rep_010,110,94,2,110,5550000,0,0,100,94,257,7.82751,100,0
-305,gen_90,rep_011,### SGP_CPU ###,### SGP_CPU ###,### SGP_CPU ###,
-305,gen_90,rep_012,,,,
+305,gen_90,rep_011,110,79,14,110,5550000,0,0,100,79,252,7.71987,100,0
+305,gen_90,rep_012,110,78,13,110,5550000,0,0,100,78,260,7.73372,100,0
 305,gen_90,rep_013,110,76,18,110,5550000,0,0,100,76,267,7.8076,100,0
 305,gen_90,rep_014,110,80,26,110,5550000,0,0,100,80,278,7.88081,100,0
 305,gen_90,rep_015,110,76,2,110,5550000,0,0,100,76,302,8.04826,100,0
 305,gen_90,rep_016,18,100,7,18,950000,0,1,100,100,26,4.66276,100,0
-305,gen_90,rep_017,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,set PRG_MAX_FUNC_CNT 1         # Maximum number of functions per program.,
+305,gen_90,rep_017,110,75,0,110,5550000,0,0,100,75,309,8.07508,100,0
 305,gen_90,rep_018,110,93,1,110,5550000,0,0,100,93,278,7.92216,100,0
 305,gen_90,rep_019,110,88,5,110,5550000,0,0,100,88,277,7.89954,100,0
 305,gen_90,rep_020,110,76,95,110,5550000,0,0,100,76,276,7.84376,100,0
@@ -11024,7 +11029,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_91,rep_028,109,99,0,109,5500000,0,0,100,99,278,7.93534,100,0
 305,gen_91,rep_029,109,76,2,109,5500000,0,0,100,76,295,8.00701,100,0
 305,gen_91,rep_030,109,79,0,109,5500000,0,0,100,79,303,8.06492,100,0
-305,gen_91,rep_031,,,,
+305,gen_91,rep_031,109,80,3,109,5500000,0,0,100,80,257,7.56262,100,0
 305,gen_91,rep_032,109,87,58,109,5500000,0,0,100,87,247,7.58951,100,0
 305,gen_91,rep_033,109,78,1,109,5500000,0,0,100,78,301,8.06303,100,0
 305,gen_91,rep_034,109,75,0,109,5500000,0,0,100,75,304,8.02147,100,0
@@ -11114,11 +11119,11 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_92,rep_018,108,85,3,108,5450000,0,0,100,85,252,7.70187,100,0
 305,gen_92,rep_019,108,75,0,108,5450000,0,0,100,75,302,8.06519,100,0
 305,gen_92,rep_020,108,93,6,108,5450000,0,0,100,93,274,7.91624,100,0
-305,gen_92,rep_021,Setting up problem.,Setting up problem.,Setting up problem.,
-305,gen_92,rep_022,Setting up problem.,Setting up problem.,Setting up problem.,
-305,gen_92,rep_023,Setting up problem.,Setting up problem.,Setting up problem.,
-305,gen_92,rep_024,Setting up problem.,Setting up problem.,Setting up problem.,
-305,gen_92,rep_025,Setting up problem.,Setting up problem.,Setting up problem.,
+305,gen_92,rep_021,108,93,1,108,5450000,0,0,100,93,267,7.87072,100,0
+305,gen_92,rep_022,108,79,133,108,5450000,0,0,100,79,255,7.67766,100,0
+305,gen_92,rep_023,108,85,0,108,5450000,0,0,100,85,280,7.89893,100,0
+305,gen_92,rep_024,108,92,2,108,5450000,0,0,100,92,285,7.97672,100,0
+305,gen_92,rep_025,108,76,3,108,5450000,0,0,100,76,256,7.6526,100,0
 305,gen_92,rep_026,108,99,1,108,5450000,0,0,100,99,265,7.85232,100,0
 305,gen_92,rep_027,108,75,34,108,5450000,0,0,100,75,266,7.71302,100,0
 305,gen_92,rep_028,108,99,1,108,5450000,0,0,100,99,277,7.93948,100,0
@@ -11209,7 +11214,7 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_93,rep_013,42,100,398,42,2150000,0,1,100,100,1,-0,100,0
 305,gen_93,rep_014,82,100,412,82,4150000,0,1,100,100,263,7.83654,100,0
 305,gen_93,rep_015,107,100,0,107,5400000,0,0,100,100,263,7.84815,100,0
-305,gen_93,rep_016,                                   # down-sample,                                   # down-sample,                                   # down-sample,
+305,gen_93,rep_016,21,100,452,21,1100000,0,1,100,100,1,-0,100,0
 305,gen_93,rep_017,107,97,0,107,5400000,0,0,100,97,273,7.92032,100,0
 305,gen_93,rep_018,26,100,45,26,1350000,0,1,100,100,10,3.313,100,0
 305,gen_93,rep_019,92,100,475,92,4650000,0,1,100,100,283,7.96532,100,0
@@ -11322,8 +11327,8 @@ rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluat
 305,gen_94,rep_026,106,100,1,106,5350000,0,0,100,100,283,7.95021,100,0
 305,gen_94,rep_027,45,100,269,45,2300000,0,1,100,100,1,-0,100,0
 305,gen_94,rep_028,106,100,0,106,5350000,0,0,100,100,272,7.92354,100,0
-305,gen_94,rep_029,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,
-305,gen_94,rep_030,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,set PRG_MIN_FUNC_CNT 1         # Minimum number of functions per program.,
+305,gen_94,rep_029,25,100,160,25,1300000,0,1,100,100,266,7.84746,100,0
+305,gen_94,rep_030,16,100,437,16,850000,0,1,100,100,1,-0,100,0
 305,gen_94,rep_031,106,94,6,106,5350000,0,0,100,94,285,7.97134,100,0
 305,gen_94,rep_032,16,100,79,16,850000,0,1,100,100,268,7.87803,100,0
 305,gen_94,rep_033,46,100,496,46,2350000,0,1,100,100,255,7.79335,100,0

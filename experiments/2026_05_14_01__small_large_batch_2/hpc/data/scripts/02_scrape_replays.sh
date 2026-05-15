@@ -62,12 +62,16 @@ for rep_id in ${!reps[@]}; do
       then
         continue
       fi
-      last_log_line=$(tail -n 1 ${full_path}/run.log)
-      max_update=$(echo "${last_log_line}" | sed -E "s/update: ([0-9]+);.+/\1/g")
-      best_org_id=$(echo "${last_log_line}" | sed -E "s/.+score \(([0-9]+)\).+/\1/g")
-      best_org_fitness=$(echo "${last_log_line}" | sed -E "s/.+ ([0-9]+)$/\1/g")
-      last_summary_line=$(tail -n 1 ${full_path}/output/summary.csv)
-      echo "${rep_id},${gen},${replay_rep},${max_update},${best_org_fitness},${best_org_id},${last_summary_line}" >> $output_file
+      last_log_line=$(tail -n 1 ${full_path}/run.log | grep update)
+      if (( $(echo "last_log_line" | wc -l) == 0 )); then
+        echo "Did not find appropriate last line in run.log. Skipping!"
+      else
+        max_update=$(echo "${last_log_line}" | sed -E "s/update: ([0-9]+);.+/\1/g")
+        best_org_id=$(echo "${last_log_line}" | sed -E "s/.+score \(([0-9]+)\).+/\1/g")
+        best_org_fitness=$(echo "${last_log_line}" | sed -E "s/.+ ([0-9]+)$/\1/g")
+        last_summary_line=$(tail -n 1 ${full_path}/output/summary.csv)
+        echo "${rep_id},${gen},${replay_rep},${max_update},${best_org_fitness},${best_org_id},${last_summary_line}" >> $output_file
+      fi
     done
   done
 done
