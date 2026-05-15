@@ -1,0 +1,82 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+
+#SBATCH --time=00:29:00
+#SBATCH --array=1-1
+#SBATCH --mem=8G
+#SBATCH --job-name (<EXP_SLUG>)
+#SBATCH --account devolab
+#SBATCH --output=(<SCRATCH_SLURM_OUT_DIR>)/slurm-snapshot-%A_%a.out
+
+########## Command Lines to Run ##########
+
+# Process command line arguments
+IS_MOCK=0
+LOAD_MODULES=1
+while getopts "ml" opt; do
+  case $opt in
+    m)
+     IS_MOCK=1
+      ;;
+    l)
+     LOAD_MODULES=0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+# If this is a mocked job, make sure we have a task id
+if [ ${IS_MOCK} -gt 0 ] && [ -z "${SLURM_ARRAY_TASK_ID}" ]; then
+  SLURM_ARRAY_TASK_ID=1
+  echo "SLURM_ARRAY_TASK_ID not defined, setting to ${SLURM_ARRAY_TASK_ID}"
+fi
+
+if (( ${LOAD_MODULES} > 0 )); then
+    (<MODULE_CMDS>)
+    (<PYTHON_LOAD>)
+fi
+
+# Variables, defined by launch script
+EXP_SLUG=(<EXP_SLUG>)
+SCRATCH_EXP_DIR=(<SCRATCH_EXP_DIR>)
+SCRATCH_FILE_DIR=(<SCRATCH_FILE_DIR>)
+EXEC_FILE=(<EXEC_FILE>)
+TEST_PREFIX_LOCAL=(<TEST_PREFIX_LOCAL>)
+REP_ID=(<REP_ID>)
+
+# Gain access to bash helper functions
+source ${SCRATCH_FILE_DIR}/bash_helper_functions.sh
+
+# Calculate the replicate's seed
+SEED_BASE=$( exp_name_to_seed ${EXP_SLUG} )
+SEED=$(( ${SEED_BASE} * (${REP_ID} * 1111) ))
+echo "Random seed: ${SEED}: Replicate ID: ${SLURM_ARRAY_TASK_ID}"
+
+# Create replicate-specific directories
+REP_DIR=${SCRATCH_EXP_DIR}/reps/$(zero_pad $REP_ID 3)
+mkdir -p ${REP_DIR}
+cd ${REP_DIR}
+
+# Load config modifications from file
+RUN_PARAMS=$(cat ${SCRATCH_FILE_DIR}/snapshot_config.cfg | tr '\n' ' ' | sed "s/(<SEED>)/${SEED}/g" | sed "s/(<TEST_PREFIX>)/$(escape_slashes ${TEST_PREFIX_LOCAL})/g")
+
+# Setup the hardcoded configuration file
+ln -s ${SCRATCH_FILE_DIR}/shared_config.cfg prog_synth.cfg
+
+# Dump out a record of what we're running, then run!
+echo "${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS}" > cmd_snapshot.log
+${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS} > run_snapshot.log
+
+# Print slurm info if this is not a mock job
+if [ ${IS_MOCK} -eq 0 ]
+then
+  scontrol show job $SLURM_JOB_ID
+fi
+
+######## Clean up ########
+rm prog_synth.cfg
+
+
