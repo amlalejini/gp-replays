@@ -61,14 +61,14 @@ mkdir -p ${REP_DIR}
 cd ${REP_DIR}
 
 # Load config modifications from file
-RUN_PARAMS=$(cat ${SCRATCH_FILE_DIR}/snapshot_config.cfg | tr '\n' ' ' | sed "s/(<SEED>)/${SEED}/g" | sed "s/(<TEST_PREFIX>)/$(escape_slashes ${TEST_PREFIX_LOCAL})/g")
+RUN_PARAMS=$(cat ${SCRATCH_FILE_DIR}/phylo_config.cfg | tr '\n' ' ' | sed "s/(<SEED>)/${SEED}/g" | sed "s/(<TEST_PREFIX>)/$(escape_slashes ${TEST_PREFIX_LOCAL})/g")
 
 # Setup the hardcoded configuration file
 ln -s ${SCRATCH_FILE_DIR}/shared_config.cfg prog_synth.cfg
 
 # Dump out a record of what we're running, then run!
-echo "${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS}" > cmd_snapshot.log
-${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS} > run_snapshot.log
+echo "${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS}" > cmd_phylo.log
+${SCRATCH_FILE_DIR}/${EXEC_FILE} ${RUN_PARAMS} > run_phylo.log
 
 # Print slurm info if this is not a mock job
 if [ ${IS_MOCK} -eq 0 ]
