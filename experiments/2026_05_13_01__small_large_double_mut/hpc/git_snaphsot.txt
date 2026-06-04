@@ -1,32 +1,28 @@
-Command ran: ./04_prepare_replay_rerun_jobs.sh
-Timestamp: 05_15_26__14_35_25
+Command ran: ./05_prepare_lineage_replay_jobs.sh
+Timestamp: 06_04_26__07_20_24
 
 Most recent commit:
-commit bde15458001a823c4e00347b8be458308c56f5c5
+commit 6bbd6b7d436bd54d194460f6e1c5a3c6e2685ae1
 Author: Austin Ferguson <ferguson.austin.j@gmail.com>
-Date:   Fri May 15 12:06:22 2026 -0400
+Date:   Wed Jun 3 11:13:52 2026 -0400
 
-    Grab replicate summary
+    Update scripts/plots for talk
 
 git status:
 On branch ferguson
+Your branch is up to date with 'origin/ferguson'.
+
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   ../../../config_global.sh
-	modified:   01_job_template_evolution_snapshots.sb
 	modified:   git_snaphsot.txt
-	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/00_job_template_evolution.sb
-	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/data/combined_evo_data.csv
-	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/data/scripts/02_scrape_replays.sh
-	modified:   ../../2026_05_14_01__small_large_batch_2/hpc/git_snaphsot.txt
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	03_job_template_phylo.sb
-	03_prepare_phylo_jobs.sh
-	04_job_template_replay_reruns.sh
-	04_prepare_replay_rerun_jobs.sh
+	05_job_template_lineage_replays.sb
+	05_prepare_lineage_replay_jobs.sh
+	shared_files/
 	../../../scripts/__pycache__/
 
 no changes added to commit (use "git add" and/or "git commit -a")
