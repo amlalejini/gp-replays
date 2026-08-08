@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # Configuration options
-output_file=../combined_replay_data.csv
-header="rep,replay_gen,replay_rep,max_update,best_org_fitness,best_org_id,update,evaluations,test_estimations,found_solution,pop_training_coverage,max_approx_agg_score,num_unique_selected,entropy_selected_ids,parents_training_coverage,training_coverage_loss"
+output_dir=../replicate_timeseries
+
+if [ ! -e ${output_dir} ]; then
+    mkdir -p $output_dir
+fi
 
 # Grab global variables and helper functions
 # The root level of the repo should be directory just above 'experiments'
@@ -53,27 +56,7 @@ if [ ! -e $output_file ]; then
     echo "$header" > ${output_file}
 fi
 for rep_id in ${!reps[@]}; do
-  echo "Starting replicate: ${rep_id}"
+  echo "Scraping replicate: ${rep_id}"
   rep_dir=${SCRATCH_REP_DIR}/${rep_id}
-  for gen in $(ls ${rep_dir}/replays | grep gen); do
-    gen_dir=${rep_dir}/replays/${gen}
-    echo "  Generation: ${gen}"
-    for replay_rep in $(ls ${gen_dir} | grep rep); do
-      full_path=${gen_dir}/${replay_rep}
-      if ! [ -d $full_path ]
-      then
-        continue
-      fi
-      last_log_line=$(tail -n 1 ${full_path}/run.log | grep update)
-      if (( $(echo "last_log_line" | wc -l) == 0 )); then
-        echo "Did not find appropriate last line in run.log. Skipping!"
-      else
-        max_update=$(echo "${last_log_line}" | sed -E "s/update: ([0-9]+);.+/\1/g")
-        best_org_id=$(echo "${last_log_line}" | sed -E "s/.+score \(([0-9]+)\).+/\1/g")
-        best_org_fitness=$(echo "${last_log_line}" | sed -E "s/.+ ([0-9]+)$/\1/g")
-        last_summary_line=$(tail -n 1 ${full_path}/output/summary.csv)
-        echo "${rep_id},${gen},${replay_rep},${max_update},${best_org_fitness},${best_org_id},${last_summary_line}" >> $output_file
-      fi
-    done
-  done
+  cp ${rep_dir}/output/summary.csv ${output_dir}/${rep_id}_summary.csv
 done
