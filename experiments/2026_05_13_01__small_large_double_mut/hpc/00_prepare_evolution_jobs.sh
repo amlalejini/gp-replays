@@ -2,7 +2,8 @@
 
 # CONFIGURATION OPTIONS
 EXEC_FILE=prog_synth # Name of the executable file
-HPC_ENV_FILEPATH=hpc-env/msu-hpc-env.sh
+#HPC_ENV_FILEPATH=hpc-env/msu-hpc-env.sh
+HPC_ENV_FILEPATH=hpc-env/clipper-hpc-env.sh
 TEST_PREFIX=../../shared_files/small-or-large-imbalanced
 
 # Grab global variables and helper functions

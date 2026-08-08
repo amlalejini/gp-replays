@@ -3,9 +3,9 @@
 
 #SBATCH --time=00:29:00
 #SBATCH --array=(<REPLAY_REP>)-(<REPLAY_REP>)
-#SBATCH --mem=8G
+#SBATCH --mem=4G
 #SBATCH --job-name (<EXP_SLUG>)
-#SBATCH --account devolab
+#SBATCH --partition=cpu
 #SBATCH --output=(<SCRATCH_SLURM_OUT_DIR>)/slurm-replay-(<REP_ID>)-(<REPLAY_GEN>)-%A_%a.out
 
 ########## Command Lines to Run ##########

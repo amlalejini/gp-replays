@@ -2,16 +2,46 @@
 
 # CONFIGURATION OPTIONS
 EXEC_FILE=prog_synth # Name of the executable file
-HPC_ENV_FILEPATH=hpc-env/msu-hpc-env.sh
+#HPC_ENV_FILEPATH=hpc-env/msu-hpc-env.sh
+HPC_ENV_FILEPATH=hpc-env/clipper-hpc-env.sh
 TEST_PREFIX=../../shared_files/small-or-large-imbalanced
 TEMPLATE_FILE=04_job_template_replay_reruns.sh
 TOTAL_GENS=200
 
 # Messy way of declaring which replicates need reran
 declare -A reps_to_gens
-reps_to_gens[296]="72"
 declare -A rep_gens_to_reps
-rep_gens_to_reps["296x72"]="28"
+reps_to_gens[305]="19 21 24 28 32 38 43 47 53 55 57 58 59 62 66 67 74 76 78 80 81 90 91 92 93 94 102 104 108 116"
+rep_gens_to_reps["305x19"]="73"
+rep_gens_to_reps["305x21"]="38 39"
+rep_gens_to_reps["305x24"]="4 5"
+rep_gens_to_reps["305x28"]="46"
+rep_gens_to_reps["305x32"]="53"
+rep_gens_to_reps["305x38"]="2"
+rep_gens_to_reps["305x43"]="35"
+rep_gens_to_reps["305x47"]="12 13"
+rep_gens_to_reps["305x53"]="14"
+rep_gens_to_reps["305x55"]="2 3 5 31"
+rep_gens_to_reps["305x57"]="71"
+rep_gens_to_reps["305x58"]="62 67 68 73"
+rep_gens_to_reps["305x59"]="43"
+rep_gens_to_reps["305x62"]="64 69 70 76 90"
+rep_gens_to_reps["305x66"]="48 37 43 66 91"
+rep_gens_to_reps["305x67"]="91 93 94 95"
+rep_gens_to_reps["305x74"]="29"
+rep_gens_to_reps["305x76"]="12 19 20"
+rep_gens_to_reps["305x78"]="21"
+rep_gens_to_reps["305x80"]="15"
+rep_gens_to_reps["305x81"]="5 6 7"
+rep_gens_to_reps["305x90"]="3 11 12 17"
+rep_gens_to_reps["305x91"]="31"
+rep_gens_to_reps["305x92"]="21 22 23 24 25"
+rep_gens_to_reps["305x93"]="16"
+rep_gens_to_reps["305x94"]="29 30"
+rep_gens_to_reps["305x102"]="4"
+rep_gens_to_reps["305x104"]="9"
+rep_gens_to_reps["305x108"]="1 2 7 8"
+rep_gens_to_reps["305x116"]="3 4 5 6"
 
 # Grab global variables and helper functions
 # The root level of the repo should be directory just above 'experiments'
