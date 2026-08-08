@@ -48,8 +48,6 @@
 
 std_cgp
 prog_synth
-*.cfg
-*.json
 output/
 .vscode/
 
