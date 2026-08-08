@@ -8,6 +8,8 @@ rep_id = 296
 
 plot_dir = '../plots'
 if(!dir.exists(plot_dir)) dir.create(plot_dir)
+processed_data_dir = '../data/processed'
+if(!dir.exists(processed_data_dir)) dir.create(processed_data_dir)
 
 df_replays = read.csv('../data/combined_replay_data.csv')
 df_replays = df_replays[df_replays$rep == rep_id,]
@@ -25,6 +27,10 @@ max_diff = max(df_summary$potentiation_diff, na.rm = T)
 max_diff_gen = df_summary[!is.na(df_summary$potentiation_diff) & df_summary$potentiation_diff == max_diff,]$replay_gen
 
 cat('Max potentiation gain at generation:', max_diff_gen, '\n')
+
+output_filename = paste0(processed_data_dir, '/processed_potentiation_summary_rep_', rep_id, '.csv')
+write.csv(df_summary, file=output_filename)
+cat('Processed potentiation data saved to:', output_filename, '\n')
 
 df_ts = read.csv(paste0('../data/replicate_timeseries/', rep_id, '_summary.csv'))
 
